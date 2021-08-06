@@ -1,25 +1,24 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Radar from './components/Radar';
+import Playground from './components/Playground';
+import styled from 'styled-components';
+
+const StyledApp = styled.div`
+  .fixed-radar {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    pointer-events: none;
+    z-index: 1;
+  }
+`;
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <StyledApp>
+      <Radar className="fixed-radar" size="160px" />
+      <Playground />
+    </StyledApp>
   );
 }
 
